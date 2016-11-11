@@ -11,7 +11,7 @@ export default function Counter({ count, onClickInc }:
 
   return (
     <div>
-      <p>Counter</p>
+      <p>COUNTER</p>
       <button
         className={classNameBtn}
         onClick={onClickInc}

@@ -16,7 +16,7 @@ export default function Fib({ count, onClickDec }:
 
   return (
     <div>
-      <p>Fib</p>
+      <p>FIB</p>
       <button
         className={classNameBtn}
         onClick={onClickDec}

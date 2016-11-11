@@ -1,0 +1,67 @@
+/*
+ * Rakuten React kit
+ *
+ * Copyright © 2016 Rakuten, Inc. All rights reserved.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+var path = require('path');
+module.exports = {
+
+  entry: "./src/main",
+
+  output: {
+    path: "./build",
+    filename: "bundle.js"
+  },
+
+  resolve: {
+
+    root: [
+      path.resolve("node_modules"),
+      path.resolve("src")
+    ] ,
+
+    extensions:
+      ["", ".webpack.js", ".web.js", ".js", ".jsx", ".scss", ".sass" ]
+
+  },
+
+  module: {
+    loaders: [
+
+      // Babel automatic loading
+      { test: /\.jsx?$/,
+        exclude: /node_modules/,
+        loader: "babel",
+        query: {
+          presets: ["react", "es2015"],
+          plugins: ["transform-flow-strip-types"]
+        }
+      },
+
+      // Sass automatic loading
+      {
+        test: /\.css$|\.scss$|\.saas$/,
+        loaders: ["style", "css", "sass"]
+      },
+
+      // Files
+      { test: /\.(png|jpg|jpeg|svg|woff|woff2|eot|ttf)$/,
+        loader: "file-loader"
+      }
+
+    ]
+
+  },
+
+  devServer: {
+    historyApiFallback: {
+      index: "index.html",
+      rewrites: [
+      ]
+    }
+  }
+};

@@ -4,6 +4,7 @@ import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import { App } from 'components/app';
 import { store } from 'domain/store/main';
+require('material-design-lite/material.min.css');
 require('style/main.scss');
 
 // User middleware

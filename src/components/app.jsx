@@ -4,8 +4,6 @@ import * as React from 'react';
 import Counter from 'components/counter';
 import Fib from 'components/fib';
 
-require('material-design-lite/material.min.css');
-
 export function App({ state, onIncrement, onDecrement }:
                     { state: {counter: number},
                       onIncrement: Function,
